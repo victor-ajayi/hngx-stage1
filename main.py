@@ -16,7 +16,7 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+@app.get("/api")
 async def main(slack_name: str, track: str):
     today = datetime.utcnow()
 
