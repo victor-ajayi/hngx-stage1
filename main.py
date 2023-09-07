@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,14 +18,14 @@ app.add_middleware(
 
 @app.get("/")
 async def main(slack_name: str, track: str):
-    now = datetime.now()
+    today = datetime.utcnow()
 
     return {
         "slack_name": slack_name,
-        "current_day": now.day,
-        "utc_time": now.time(),
+        "current_day": today.strftime("%A"),
+        "utc_time": today.utcnow(),
         "track": track,
-        "github_file_url": "",
-        "github_repo_url": "",
+        "github_file_url": "https://github.com/victor-ajayi/hngx-stage1/blob/main/main.py",
+        "github_repo_url": "https://github.com/victor-ajayi/hngx-stage1",
         "status_code": 200,
     }
