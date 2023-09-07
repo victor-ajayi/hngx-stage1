@@ -26,7 +26,6 @@ pycparser==2.21
 pydantic==1.10.5
 pytest==7.3.0
 pytest-asyncio==0.21.0
-python-dotenv==1.0.0
 python-jose==3.3.0
 python-multipart==0.0.6
 rsa==4.9
